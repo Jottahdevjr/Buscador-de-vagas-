@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Buscador de Vagas Dev</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 820px; margin: 2rem auto; padding: 0 1rem; background: #f6f7f9; color: #1c1e21; }
+    h1 { margin-bottom: 1rem; }
+    form { background: #fff; padding: 1rem; border-radius: 10px; display: grid; gap: 0.8rem; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+    input[type="text"], select { padding: 0.6rem; border: 1px solid #ccd0d5; border-radius: 6px; font-size: 1rem; }
+    fieldset { border: 1px solid #ccd0d5; border-radius: 6px; display: flex; gap: 1rem; flex-wrap: wrap; }
+    button { padding: 0.7rem; border: 0; border-radius: 6px; background: #2563eb; color: #fff; font-size: 1rem; cursor: pointer; }
+    #status { margin: 1rem 0; color: #555; }
+    .card { background: #fff; padding: 1rem; border-radius: 10px; margin-bottom: 0.8rem; box-shadow: 0 1px 3px rgba(0,0,0,.1); }
+    .card h2 { margin: 0 0 0.3rem; font-size: 1.1rem; }
+    .card p { margin: 0.2rem 0; }
+    .tag { display: inline-block; background: #e0e7ff; color: #3730a3; padding: 0.1rem 0.5rem; border-radius: 99px; font-size: 0.85rem; margin-right: 0.3rem; }
+    .card a { display: inline-block; margin-top: 0.5rem; color: #2563eb; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Buscador de Vagas Dev</h1>
+
+  <form id="filtros">
+    <input type="text" name="q" placeholder="Buscar por palavra (ex: react, banco, estágio)" />
+
+    <fieldset>
+      <legend>Modelo de trabalho</legend>
+      <label><input type="checkbox" name="modelos" value="remote" /> Remoto</label>
+      <label><input type="checkbox" name="modelos" value="hybrid" /> Híbrido</label>
+      <label><input type="checkbox" name="modelos" value="on-site" /> Presencial</label>
+    </fieldset>
+
+    <label>
+      Compatibilidade mínima com o currículo:
+      <select name="minimo">
+        <option value="1">1 tecnologia ou mais</option>
+        <option value="2">2 ou mais</option>
+        <option value="3">3 ou mais</option>
+      </select>
+    </label>
+
+    <button type="submit">Buscar</button>
+  </form>
+
+  <p id="status"></p>
+  <section id="lista"></section>
+
+  <script src="app.js"></script>
+</body>
+</html>
